@@ -9,6 +9,7 @@ import { SectionGenericComponent } from './components/section-generic/section-ge
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ImgBrokenDirective } from './directives/img-broken.directive';
 import { OrderListPipe } from './pipe/order-list.pipe';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -24,8 +25,17 @@ import { OrderListPipe } from './pipe/order-list.pipe';
     ImgBrokenDirective,
     OrderListPipe
   ],
-  imports: [
-    CommonModule
+  imports: [ CommonModule, RouterModule ],
+  exports: [
+    CardPlayerComponent,
+    HeaderUserComponent,
+    MediaPlayerComponent,
+    PlayListBodyComponent,
+    PlayListHeaderComponent,
+    SectionGenericComponent,
+    SideBarComponent,
+    ImgBrokenDirective,
+    OrderListPipe
   ]
 })
 export class SharedModule { }
