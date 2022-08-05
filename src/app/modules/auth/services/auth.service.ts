@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   constructor() { }
+
+  sendCredentials(name: string, password: string): void {
+    console.log(name, password);
+    
+  }
 }
