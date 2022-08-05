@@ -1,6 +1,8 @@
 <!-- Diseño del mode (small)-->
 <div *ngIf="mode==='small'" class="card-player player-small">
-    <img [src]="track.cover" [alt]="track.name" class="cover">
+
+    <img appImgBroken customImg="../../../../assets/svg/angular-black.svg" [src]="track.cover" [alt]="track.name" class="cover">
+    
     <div class="content-player">
         {{track.name}}
     </div>
@@ -17,7 +19,7 @@
 <!-- Diseño del mode (big)-->
 <div *ngIf="mode==='big'" class="card-player player-big">
 
-    <img [src]="track.cover" alt="" class="cover">
+    <img appImgBroken customImg="../../../../assets/svg/angular-red.svg" [src]="track.cover" alt="" class="cover">
 
     <div class="content-player">
         <div class="title-track">{{track.name}}</div>
