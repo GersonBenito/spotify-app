@@ -94,7 +94,9 @@
             background-color: var(--color-1);
         }
     }
-    
+    .errorSession{
+        color: red;
+    }
 }
 
 input.ng-invalid.ng-touched {
@@ -104,3 +106,4 @@ input.ng-invalid.ng-touched {
 input.ng-valid.ng-touched {
     border: solid 2px var(--color-1) !important
 }
+
