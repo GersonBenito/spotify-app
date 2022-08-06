@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TrackModel } from '@core/models/track.model';
-import * as dataRaw from '../../../data/tracks.json';
 
 @Component({
   selector: 'app-play-list-body',
@@ -9,7 +8,7 @@ import * as dataRaw from '../../../data/tracks.json';
 })
 export class PlayListBodyComponent implements OnInit {
 
-  public tracks: TrackModel[] = [];
+  @Input() public tracks: TrackModel[] = [];
   public optionSort: {
     property: string | null,
     order: 'asc' | 'desc',
@@ -18,8 +17,7 @@ export class PlayListBodyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const { data }: any = ( dataRaw as any ).default;
-    this.tracks = data;
+    
   }
 
   changeSort(property: string): void{

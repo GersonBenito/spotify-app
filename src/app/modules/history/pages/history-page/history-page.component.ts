@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TrackModel } from '@core/models/track.model';
+import { SearchService } from '@modules/history/services/search.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-history-page',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryPageComponent implements OnInit {
 
-  constructor() { }
+  public listResult$: Observable<any> = of([]);
 
-  ngOnInit(): void {
+  constructor(private _searchService: SearchService) { }
+
+  ngOnInit(): void {}
+
+  resiveData(event: string): void{
+    // auto suscribe and unsuscribe async
+    this.listResult$ = this._searchService.searchTracks$(event);
   }
 
 }
