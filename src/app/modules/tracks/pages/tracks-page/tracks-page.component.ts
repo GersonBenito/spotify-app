@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TrackModel } from '@core/models/track.model';
 import { TrackService } from '@modules/tracks/services/track.service';
 import { Subscription } from 'rxjs';
-import * as dataRaw from '../../../../data/tracks.json';
 
 @Component({
   selector: 'app-tracks-page',
@@ -18,31 +17,29 @@ export class TracksPageComponent implements OnInit, OnDestroy {
   constructor(private _trackService: TrackService) { }
 
   ngOnInit(): void {
-    const trendingTracks$: Subscription = this._trackService.dataTracksTrending$.subscribe({
-      next: response =>{
-        console.log('trending tracks', response);
+    this.getAllTRacks();
+    this.getAllTracksRandom();
+  }
+
+  getAllTRacks(): void{
+    const observerTrack$: Subscription = this._trackService.getAllTracks$().subscribe({
+      next: (response: TrackModel[]) =>{
         this.trackTrending = response;
-      },
-      error: error =>{
-        console.log(error);
       }
     });
+    this.listObservers$ = [ observerTrack$ ];
+  }
 
-    const randomTracks$: Subscription = this._trackService.dataTracksTrending$.subscribe({
-      next: response =>{
+  getAllTracksRandom(): void {
+    const trackRandom$: Subscription = this._trackService.getAllTracksRandom$().subscribe({
+      next: (response: TrackModel[]) =>{
         this.trackRandom = response;
-      },
-      error: error =>{
-        console.log(error);
-        
       }
     });
-
-    this.listObservers$ = [ trendingTracks$, randomTracks$ ];
+    this.listObservers$ = [ ...this.listObservers$, trackRandom$]
   }
 
   ngOnDestroy(): void {
-    this.listObservers$.forEach( u => u.unsubscribe());
+    this.listObservers$.forEach(u => u.unsubscribe());
   }
-
 }
