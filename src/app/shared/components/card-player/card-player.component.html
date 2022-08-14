@@ -7,12 +7,9 @@
         {{track.name}}
     </div>
     <div class="buttons-player">
-        <button (click)="sendPlay(track)" *ngIf="true" class="play-btn">
-            <i class="uil " [ngClass]="{'uil-play':true}"></i>
-        </button>
-        <button *ngIf="false" class="play-btn">
-            <i class="uil uil-play"></i>
-        </button>
+        <div (click)="sendPlay(track)" *ngIf="true" class="play-btn">
+            <img src="../../../../assets/svg/play-green.svg" alt="play-green" class="uil " [ngClass]="{'uil-play':true}" />
+        </div>
     </div>
 </div>
 

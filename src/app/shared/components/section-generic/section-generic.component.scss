@@ -1,19 +1,22 @@
-.section--generic {
-    margin-bottom: 2rem;
+@mixin section_grid($width, $gap) {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, $width), 1fr));
 }
 
-.section--generic__player--zone {
-    .player--list {
-        display: grid;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 1.15rem;
+
+
+.section--generic {
+    margin-bottom: 2rem;
+    .section--generic__title{
+        margin-bottom: 10px
     }
-    .player--list.card-small {
-        grid-template-columns: repeat(5, 1fr);
+    .card-small{
+        @include section_grid(20rem, 10px 15px);
     }
-    .player--list.card-big {
-        grid-template-columns: repeat(6, minmax(100px, 1fr));
+
+    .card-big{
+        @include section_grid(12rem, 0px 0px);
     }
+    
 }

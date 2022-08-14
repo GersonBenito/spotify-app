@@ -20,19 +20,18 @@ export class SideBarComponent implements OnInit {
     this.mainMenu.defaultOptions = [
       {
         name: 'Home',
-        icon: 'uil uil-estate',
-        router: ['/auth'],
+        icon: 'home',
+        router: ['/tracks'],
       },
       {
-        name: 'Buscar',
-        icon: 'uil uil-search',
+        name: 'Search',
+        icon: 'search',
         router: ['/history'],
       },
       {
-        name: 'Tu biblioteca',
-        icon: 'uil uil-chart',
+        name: 'Your Library',
+        icon: 'library',
         router: ['/favorites'],
-        query: { hola: 'mundo' }
       }
     ];
 

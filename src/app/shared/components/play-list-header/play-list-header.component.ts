@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-play-list-header',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayListHeaderComponent implements OnInit {
 
+  @Input() public name: string = '';
+  @Input() public amountTracks: number = 0;
   constructor() { }
 
   ngOnInit(): void {

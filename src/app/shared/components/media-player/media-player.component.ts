@@ -12,6 +12,7 @@ export class MediaPlayerComponent implements OnInit, OnDestroy {
   @ViewChild('progressBar') progressBar: ElementRef = new ElementRef('');
   public listObservers$: Array<Subscription> = [];
   public state: string = 'paused';
+  public favorite: boolean = false;
 
   constructor(public _multimediaService: MultimediaService) { }
 
@@ -30,6 +31,10 @@ export class MediaPlayerComponent implements OnInit, OnDestroy {
     const clickX = clientX - x;
     const percentageFromX = (clickX * 100) / width;
     this._multimediaService.seekAudio(percentageFromX);
+  }
+
+  toggleFavorite(favorite: boolean): void{
+    this.favorite = (favorite) ? false : true;
   }
 
   ngOnDestroy(): void {

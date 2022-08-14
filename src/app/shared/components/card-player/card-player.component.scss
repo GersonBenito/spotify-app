@@ -1,76 +1,44 @@
-.card-player {
-    background-color: var(--color-2);
-    height: 5rem;
-    border-radius: var(--border-radius-1);
-    display: flex;
+.player-small{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 15% 60% 15%;
+    background: var(--background-tinted-highlight);
+    align-items: center;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all ease var(--animation-1);
-    justify-content: space-between;
-    &:hover{
-        background-color: #4d4d4d;
-        .buttons-player {
-            opacity: 1;
-        }
-    }
-    .cover {
-        width: 5rem;
-        height: 100%;
-        object-fit: cover;
-        border-top-left-radius: var(--border-radius-1);
-        border-bottom-left-radius: var(--border-radius-1);
-    }
-    .content-player {
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        align-content: center;
-        padding: 0 0 0 .75rem;
-    }
-    .buttons-player {
+    .buttons-player{
         opacity: 0;
-        width: 5rem;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        transition: all ease var(--animation-1);
-        .play-btn {
-            color: var(--color-4);
-            border: 0;
-            font-size: 1.15rem;
-            border-radius: 2rem;
-            background-color: var(--color-1);
-            width: 45px;
-            height: 45px;
+        text-align: center;
+        .play-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 40px;
+                border-radius: 50px;
+                box-shadow: 0px 8px 5px var(--background-elevated-highlight);
+                background: var(--background-highlight);
+            }
         }
     }
-    
+    img{
+        width: 64px;
+        border-radius: 5px 0px 0px 5px;
+    }
+    &:hover{
+        background: var(--essential-subdued);
+        .buttons-player{
+            opacity: 1;
+            transition: all ease var(--animation-1);
+        } 
+    }
 }
 
-
-.player-big {
-    position: relative;
-    flex-direction: column;
-    height: 18rem;
-    padding: 1rem;
-    .cover {
-        width: 100%;
-        height: 200px;
-        border-radius: var(--border-radius-1);
+.player-big{
+    .buttons-player{
+        display: none;
     }
-    .content-player {
-        padding: .5rem 0;
-        flex-direction: column;
-        align-self: flex-start;
-        align-items: flex-start;
-        .sub-title-track {
-            font-size: 80%;
-            opacity: .7;
-        }            
-    }
-    .buttons-player {
-        position: absolute;
-        right: 0;
-        top: 13rem
+    img{
+        width: 200px;
     }
 }

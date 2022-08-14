@@ -1,5 +1,11 @@
-<app-side-bar></app-side-bar>
-<app-media-player></app-media-player>
-<div class="home-wrapper">
-    <router-outlet></router-outlet>
+<div class="container-full">
+    <div class="container">
+        <app-side-bar></app-side-bar>
+        <div class="container-primary">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="media-player">
+        <app-media-player></app-media-player>
+    </div>
 </div>

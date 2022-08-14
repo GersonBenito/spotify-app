@@ -1,0 +1,16 @@
+.tracks-page{
+    padding: 16px;
+    overflow-y: scroll;
+    height: 600px;
+}
+
+.tracks-page::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+
+.tracks-page::-webkit-scrollbar-thumb{
+    background: var(--text-subdued);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
