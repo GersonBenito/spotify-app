@@ -9,14 +9,15 @@
 .section--generic {
     margin-bottom: 2rem;
     .section--generic__title{
-        margin-bottom: 10px
+        margin-bottom: 10px;
+        font-size: 22px
     }
     .card-small{
         @include section_grid(20rem, 10px 15px);
     }
 
     .card-big{
-        @include section_grid(12rem, 0px 0px);
+        @include section_grid(12rem, 30px 15px);
     }
     
 }

@@ -15,19 +15,17 @@
 
 <!-- Diseño del mode (big)-->
 <div *ngIf="mode==='big'" class="card-player player-big">
-
-    <img appImgBroken customImg="../../../../assets/svg/angular-red.svg" [src]="track.cover" alt="" class="cover">
-
-    <div class="content-player">
-        <div class="title-track">{{track.name}}</div>
-        <div class="sub-title-track">{{track.name}}</div>
-    </div>
-    <div class="buttons-player">
-        <button (click)="sendPlay(track)" *ngIf="true" class="play-btn">
-            <i class="uil " [ngClass]="{'uil-play':true}"></i>
-        </button>
-        <button *ngIf="false" class="play-btn">
-            <i class="uil uil-play"></i>
-        </button>
+    <div class="container_card_player_big">
+        <img appImgBroken customImg="../../../../assets/svg/angular-red.svg" [src]="track.cover" alt="" class="cover">
+    
+        <div class="content-player">
+            <div class="title-track">{{track.album}}</div>
+            <div class="sub-title-track">{{track.name}}</div>
+        </div>
+        <div class="buttons-player">
+            <div (click)="sendPlay(track)" *ngIf="true" class="play-btn">
+                <img src="../../../../assets/svg/play-green.svg" alt="play-green" class="uil " [ngClass]="{'uil-play':true}" />
+            </div>
+        </div>
     </div>
 </div>

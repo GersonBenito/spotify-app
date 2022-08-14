@@ -18,28 +18,19 @@
 <!-- ZONE TEMPLATES -->
 
 <ng-template #artistZone>
-    <!-- <div class="artist-inside" *ngIf="_multimediaService.trackInfo$ | async as mockCover">
+    <div class="artist-inside" *ngIf="_multimediaService.trackInfo$ | async as mockCover">
 
         <img [src]="mockCover.cover" [alt]="mockCover.name" class="cover">
         <div class="track-info">
-            <h3 class="track-title">{{mockCover.name}}</h3>
-            <h5 class="track-title sub-title">{{mockCover.album}}</h5>
+            <h3 class="track-title">{{ mockCover.name }}</h3>
+            <h5 class="track-title sub-title">{{ mockCover.album }}</h5>
         </div>
         <div class="track-like">
-            <button class="btn-like">
-                <i class="uil uil-heart"></i>
-            </button>
-        </div>
-    </div> -->
-    <div class="artist-inside" *ngIf="true">
-
-        <img src="https://jenesaispop.com/wp-content/uploads/2009/09/guetta_onelove.jpg" alt="cover" class="cover">
-        <div class="track-info">
-            <h3 class="track-title">David Guetta</h3>
-            <h5 class="track-title sub-title">David Guetta</h5>
-        </div>
-        <div class="track-like">
-            <img (click)="toggleFavorite(favorite)" src="../../../../assets/svg/{{favorite ? 'favorite' : 'heart'}}.svg" alt="heart">
+            <img 
+                (click)="toggleFavorite(favorite)" 
+                src="../../../../assets/svg/{{favorite ? 'favorite' : 'heart'}}.svg" 
+                alt="heart"
+            >
         </div>
     </div>
 </ng-template>
@@ -71,29 +62,24 @@
     </div> -->
     <div class="player-controls-inside">
         <div class="buttons-media">
-            <!-- <button class="arrow btn">
-                <i class="uil uil-previous"></i>
-            </button> -->
             <img src="../../../../assets/svg/previus-icon.svg" alt="previus-icon">
-            <!-- <button [disabled]="(_multimediaService.trackInfo$ | async) === undefined" class="play btn" (click)="_multimediaService.togglePlayer()">
-                <i [ngClass]="{ 
-                    'uil-play-circle':state === 'paused',
-                    'uil-pause-circle':state !== 'paused' 
-                }" class="uil"></i>
-            </button> -->
-            <img src="../../../../assets/svg/play.svg" class="play" alt="play">
+            <img 
+                src="../../../../assets/svg/{{state === 'paused' ? 'play' :  state !== 'paused' ? 'pause' : 'play'}}.svg" 
+                class="play" 
+                alt="play"
+                (click)="_multimediaService.togglePlayer()"
+            >
             <!-- <button class="arrow btn">
                 <i class="uil uil-step-forward"></i>
             </button> -->
             <img src="../../../../assets/svg/next-icon.svg" alt="next-icon">
         </div>
         <div class="media-linetime">
-            <div class="time">99</div>
-            <span #progressBar (click)="handlePosition($event)" class="time-progress">
-                <span class="time-progress-live" [style.width]="50+'%'">
-                </span>
-            </span>
-            <div class="time">999</div>
+            <div class="time">{{ _multimediaService.timeElapsed$ | async }}</div>
+            <div #progressBar (click)="handlePosition($event)" class="time-progress">
+                <div class="time-progress-live"  [style.width]="(_multimediaService.playerPercentage$ | async)+'%'"></div>
+            </div>
+            <div class="time">{{ _multimediaService.timeRemaining$ | async }}</div>
         </div>
     </div>
 </ng-template>

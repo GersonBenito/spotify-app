@@ -49,17 +49,17 @@
     width: 100%;
     align-items: center;
     gap: 10px;
-    .time-progress-live {
-        background-color: white;
+    .time-progress {
+        background-color: #b3b3b3;
         height: 3px;
-        transition: all ease white;
+        width: 100%;
         cursor: pointer;
         border-radius: 50px;
     }
-    .time-progress {
-        background-color: gray;
+    .time-progress-live {
+        background-color: var(--text-base);
         height: 3px;
-        width: 100%;
+        transition: all ease var(--text-base);
         cursor: pointer;
         border-radius: 50px;
     }
@@ -102,13 +102,13 @@
         }
         .sound-progress{
             width: 100%;
-            background-color: gray;
+            background-color: #b3b3b3;
             height: 3px;
             border-radius: 50px;
             cursor: pointer;
             .sound-progress-live{
                 width: 50%;
-                background: white;
+                background: var(--text-base);
                 height: 3px;
                 border-radius: 50%;
             }
