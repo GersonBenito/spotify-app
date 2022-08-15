@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class MediaPlayerComponent implements OnInit, OnDestroy {
   
   @ViewChild('progressBar') progressBar: ElementRef = new ElementRef('');
+  @ViewChild('soundBar') soundBar: ElementRef = new ElementRef('');
   public listObservers$: Array<Subscription> = [];
   public state: string = 'paused';
   public favorite: boolean = false;
@@ -39,6 +40,15 @@ export class MediaPlayerComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.listObservers$.forEach(u => u.unsubscribe());
+  }
+
+  handlePositionSound(event: MouseEvent): void{
+    const { clientX } = event;
+    const theNative: HTMLElement = this.soundBar.nativeElement;
+    const { x, width } = theNative.getBoundingClientRect(); 
+    const clickX = clientX - x;
+    const percentageFromX = (clickX * 100) / width;
+    this._multimediaService.seekSound(percentageFromX);
   }
 
 }

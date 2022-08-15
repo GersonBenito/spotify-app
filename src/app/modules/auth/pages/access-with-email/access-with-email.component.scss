@@ -1,0 +1,99 @@
+.form-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+input{
+    border: 1px solid #b3b3b3;
+    padding: 15px 12px;
+    border-radius: 5px;
+}
+
+label{
+    margin-bottom: 5px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.forgot-password p{
+    font-family: 'Rubik';
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.action-login{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.remenber{
+    display: flex;
+    align-items: center;
+}
+
+.remenber input{
+    margin-right: 10px;
+}
+
+.remenber label{
+    font-family: 'Rubik';
+    font-size: 14px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.remenber input[type="checkbox"]{
+    display: none;
+}
+
+.remenber input[type="checkbox"]:checked + label:before{
+    background: var(--text-positive);
+    color: var(--text-base);
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../../../assets/svg/checked.svg');
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center; 
+}
+
+.remenber label:before{
+    content: '';
+    border-radius: 3px;
+    width: 0.8em;
+    height: 00.8em;
+    position: absolute;
+    left: 0px;
+    border: 1px solid #b3b3b3;
+    transition: all 0.2s;
+    padding: 2px;
+}
+
+
+
+.button-login{
+    text-align: end;
+}
+
+.button-login button{
+    border: none;
+    background: var(--text-positive);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-family: 'Rubik';
+    font-weight: 300;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container-access-email{
+    margin-top: 12px;
+}
+
+.forgot-password{
+    margin: 12px 0px;
+}

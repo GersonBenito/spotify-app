@@ -16,7 +16,6 @@
 </div>
 
 <!-- ZONE TEMPLATES -->
-
 <ng-template #artistZone>
     <div class="artist-inside" *ngIf="_multimediaService.trackInfo$ | async as mockCover">
 
@@ -36,30 +35,6 @@
 </ng-template>
 
 <ng-template #playerZone>
-    <!-- <div class="player-controls-inside">
-        <div class="buttons-media">
-            <button class="arrow btn">
-                <i class="uil uil-previous"></i>
-            </button>
-            <button [disabled]="(_multimediaService.trackInfo$ | async) === undefined" class="play btn" (click)="_multimediaService.togglePlayer()">
-                <i [ngClass]="{ 
-                    'uil-play-circle':state === 'paused',
-                    'uil-pause-circle':state !== 'paused' 
-                }" class="uil"></i>
-            </button>
-            <button class="arrow btn">
-                <i class="uil uil-step-forward"></i>
-            </button>
-        </div>
-        <div class="media-linetime">
-            <div class="time">{{ _multimediaService.timeElapsed$ | async }}</div>
-            <span #progressBar (click)="handlePosition($event)" class="time-progress">
-                <span class="time-progress-live" [style.width]="(_multimediaService.playerPercentage$ | async)+'%'">
-                </span>
-            </span>
-            <div class="time">{{ _multimediaService.timeRemaining$ | async }}</div>
-        </div>
-    </div> -->
     <div class="player-controls-inside">
         <div class="buttons-media">
             <img src="../../../../assets/svg/previus-icon.svg" alt="previus-icon">
@@ -69,9 +44,6 @@
                 alt="play"
                 (click)="_multimediaService.togglePlayer()"
             >
-            <!-- <button class="arrow btn">
-                <i class="uil uil-step-forward"></i>
-            </button> -->
             <img src="../../../../assets/svg/next-icon.svg" alt="next-icon">
         </div>
         <div class="media-linetime">
@@ -88,10 +60,9 @@
     <div class="player-audio-inside">
         <div class="content">
             <img src="../../../../assets/svg/sound.svg" alt="sound">
-            <span #soundBar class="sound-progress">
-                <span class="sound-progress-live" [style.width]="50+'%'">
-                </span>
-            </span>
+            <div #soundBar (click)="handlePositionSound($event)" class="sound-progress">
+                <div class="sound-progress-live" [style.width]="(_multimediaService.soundPercentage$ | async)+'%'"></div>
+            </div>
         </div>
     </div>
 </ng-template>

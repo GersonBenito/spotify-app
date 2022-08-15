@@ -1,0 +1,62 @@
+.title-actions p{
+    font-family: 'Rubik', sans-serif;
+}
+
+button{
+   border: 1px solid #b3b3b3; 
+   background: none;
+   border-radius: 50px;
+   color: var(--text-base);
+   cursor: pointer;
+   font-family: 'Rubik', sans-serif;
+   letter-spacing: 1.5px;
+   font-size: 14px;
+   line-height: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+button img{
+    width: 15px;
+    margin-right: 10px;
+}
+
+.conatiner-social-media{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 30% 70%;
+    justify-items: center;
+}
+
+.container-buttons{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.title-actions{
+    display: flex;
+    align-items: flex-end;
+}
+
+.button-facebook{
+    background: var(--essential-announcement);
+}
+
+.button-apple{
+    background: var(--background-base);
+}
+
+.button-apple img{
+    width: 25px;
+}
+
+.button-google{
+    color: #6a6a6a;
+}
+.button-google img{
+    width: 20px;
+}

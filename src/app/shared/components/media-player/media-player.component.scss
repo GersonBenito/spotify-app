@@ -51,15 +51,15 @@
     gap: 10px;
     .time-progress {
         background-color: #b3b3b3;
-        height: 3px;
+        height: 4px;
         width: 100%;
         cursor: pointer;
         border-radius: 50px;
     }
     .time-progress-live {
-        background-color: var(--text-base);
-        height: 3px;
-        transition: all ease var(--text-base);
+        background: var(--text-positive);
+        height: 4px;
+        transition: all ease var(--text-positive);
         cursor: pointer;
         border-radius: 50px;
     }
@@ -103,17 +103,16 @@
         .sound-progress{
             width: 100%;
             background-color: #b3b3b3;
-            height: 3px;
+            height: 4px;
             border-radius: 50px;
             cursor: pointer;
             .sound-progress-live{
                 width: 50%;
-                background: var(--text-base);
-                height: 3px;
-                border-radius: 50%;
+                background: var(--text-positive);
+                height: 4px;
+                border-radius: 50px;
+                transition: all ease var(--text-positive);
             }
         }
     }
 }
-
-

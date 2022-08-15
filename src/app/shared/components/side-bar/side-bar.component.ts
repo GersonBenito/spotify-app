@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MultimediaService } from '@shared/services/multimedia.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -14,7 +15,7 @@ export class SideBarComponent implements OnInit {
 
   public customOptions: Array<any> = [];
 
-  constructor() { }
+  constructor(public _multimediaService: MultimediaService) { }
 
   ngOnInit(): void {
     this.mainMenu.defaultOptions = [
