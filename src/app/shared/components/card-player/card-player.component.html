@@ -1,5 +1,5 @@
 <!-- Diseño del mode (small)-->
-<div *ngIf="mode==='small'" class="card-player player-small">
+<div *ngIf="mode==='small'" class="card-player player-small" (click)="sendPlay(track)">
 
     <img appImgBroken customImg="../../../../assets/svg/angular-black.svg" [src]="track.cover" [alt]="track.name" class="cover">
     
@@ -7,7 +7,7 @@
         {{track.name}}
     </div>
     <div class="buttons-player">
-        <div (click)="sendPlay(track)" *ngIf="true" class="play-btn">
+        <div *ngIf="true" class="play-btn">
             <img src="../../../../assets/svg/play-green.svg" alt="play-green" class="uil " [ngClass]="{'uil-play':true}" />
         </div>
     </div>
@@ -15,7 +15,7 @@
 
 <!-- Diseño del mode (big)-->
 <div *ngIf="mode==='big'" class="card-player player-big">
-    <div class="container_card_player_big">
+    <div class="container_card_player_big" (click)="sendPlay(track)">
         <img appImgBroken customImg="../../../../assets/svg/angular-red.svg" [src]="track.cover" alt="" class="cover">
     
         <div class="content-player">
@@ -23,7 +23,7 @@
             <div class="sub-title-track">{{track.name}}</div>
         </div>
         <div class="buttons-player">
-            <div (click)="sendPlay(track)" *ngIf="true" class="play-btn">
+            <div *ngIf="true" class="play-btn">
                 <img src="../../../../assets/svg/play-green.svg" alt="play-green" class="uil " [ngClass]="{'uil-play':true}" />
             </div>
         </div>
